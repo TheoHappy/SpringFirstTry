@@ -15,11 +15,11 @@ public class StudentRepository {
         students.add("Seriojica");
     }
 
-    public List<String> getStudents(){
+    public List<String> getStudents() {
         return students;
     }
 
-    public void addStudent(String name){
+    public void addStudent(String name) {
         students.add(name);
     }
 

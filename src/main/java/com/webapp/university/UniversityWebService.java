@@ -10,27 +10,34 @@ import java.util.List;
 public class UniversityWebService {
     StudentRepository sRep = new StudentRepository();
     TeacherRepository tRep = new TeacherRepository();
+
+
     @GetMapping
     public String test() {
         return "First try in Spring Web";
     }
+
     @GetMapping("/students")
-    public List<String> studentsList(){
+    public List<String> studentsList() {
         return sRep.getStudents();
     }
+
     @GetMapping("/teachers")
-    public List<String> teachersList(){
+    public List<String> teachersList() {
         return tRep.getTeachers();
     }
+
     @PostMapping("/addStudent/{name}")
-    public void addStudent(@PathVariable("name") String name) {
+    public void addStudent(@PathVariable String name) {
         sRep.addStudent(name);
 
     }
-    @PostMapping("/addTeacher/{name}")
+
+    @PutMapping("/addTeacher/{name}")
     public void addTeacher(@PathVariable("name") String name) {
         tRep.addTeacher(name);
 
     }
+
 
 }
