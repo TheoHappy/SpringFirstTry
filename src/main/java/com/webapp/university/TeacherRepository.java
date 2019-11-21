@@ -19,6 +19,9 @@ public class TeacherRepository {
     public void addTeacher(String name) {
         teachers.add(name);
     }
+    public void delTeacher(String name) {
+        teachers.remove(name);
+    }
 
     @Override
     public String toString() {

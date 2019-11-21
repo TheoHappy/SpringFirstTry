@@ -39,5 +39,10 @@ public class UniversityWebService {
 
     }
 
+    @DeleteMapping("delTeacher/{name}")
+    public void delTeacher(@PathVariable("name") String name){
+        tRep.delTeacher(name);
+    }
+
 
 }
