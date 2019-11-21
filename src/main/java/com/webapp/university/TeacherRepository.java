@@ -2,32 +2,29 @@ package com.webapp.university;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.function.Predicate;
 
 public class TeacherRepository {
-    String name;
-    List<String> teachers = new ArrayList<>();
+    List<Teacher> teachers = new ArrayList<>();
 
     public TeacherRepository() {
-        teachers.add("Anatolie");
-        teachers.add("Vera");
+        teachers.add(new Teacher("Anatolie","Balanov","CDE"));
+        teachers.add(new Teacher("Leonea","Vasilache","Limba si literatura romana"));
+        teachers.add(new Teacher("Alexei","Muntean","Matematica"));
+        teachers.add(new Teacher("Vitea","Leontii","Informatica"));
     }
 
-    public List<String> getTeachers() {
+    public List<Teacher> getTeachers() {
         return teachers;
     }
 
-    public void addTeacher(String name) {
-        teachers.add(name);
-    }
-    public void delTeacher(String name) {
-        teachers.remove(name);
+    public void addTeacher(Teacher teacher) {
+        teachers.add(teacher);
     }
 
-    @Override
-    public String toString() {
-        return "TeacherRepository{" +
-                "name='" + name + '\'' +
-                ", teachers=" + teachers +
-                '}';
+    public void delTeacher(String fName) {
+        Predicate<Teacher> condition = teacher -> teacher.getFirstName().equals(fName);
+        teachers.removeIf(condition);
     }
+
 }

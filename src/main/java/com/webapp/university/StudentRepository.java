@@ -2,25 +2,29 @@ package com.webapp.university;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class StudentRepository {
-    String name;
-    List<String> students = new ArrayList<>();
+    List<Student> students = new ArrayList<>();
 
     public StudentRepository() {
-        students.add("Andries");
-        students.add("Valoghita");
-        students.add("Petrica");
-        students.add("Trofim");
-        students.add("Seriojica");
+        students.add(new Student("Andries", "Bonta", 7.5));
+        students.add(new Student("Valoghita", "Arcan", 8.3));
+        students.add(new Student("Petrica", "Zohan", 5));
+
     }
 
-    public List<String> getStudents() {
+    public List<Student> getStudents() {
         return students;
     }
 
-    public void addStudent(String name) {
-        students.add(name);
+    public void addStudent(Student student) {
+        students.add(student);
+    }
+
+    public void delStudent(String fName) {
+        Predicate<Student> condition = student -> student.getFirstName().equals(fName);
+        students.removeIf(condition);
     }
 
 }
