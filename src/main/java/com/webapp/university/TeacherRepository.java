@@ -8,10 +8,10 @@ public class TeacherRepository {
     List<Teacher> teachers = new ArrayList<>();
 
     public TeacherRepository() {
-        teachers.add(new Teacher("Anatolie","Balanov","CDE"));
-        teachers.add(new Teacher("Leonea","Vasilache","Limba si literatura romana"));
-        teachers.add(new Teacher("Alexei","Muntean","Matematica"));
-        teachers.add(new Teacher("Vitea","Leontii","Informatica"));
+        teachers.add(new Teacher("Anatolie", "Balanov", "CDE"));
+        teachers.add(new Teacher("Leonea", "Vasilache", "Limba si literatura romana"));
+        teachers.add(new Teacher("Alexei", "Muntean", "Matematica"));
+        teachers.add(new Teacher("Vitea", "Leontii", "Informatica"));
     }
 
     public List<Teacher> getTeachers() {

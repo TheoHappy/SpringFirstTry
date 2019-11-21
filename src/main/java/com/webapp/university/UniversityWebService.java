@@ -26,24 +26,13 @@ public class UniversityWebService {
         return tRep.getTeachers();
     }
 
-/*    @PostMapping("/addStudent/{firstName}/{lastName}/{avg}")
-    public void addStudent(@PathVariable String firstName,@PathVariable String lastName,@PathVariable double avg) {
-        sRep.addStudent(firstName,lastName,avg);
-
-    }
-    @PostMapping("/addstudent")
-    public void addStudent(@RequestParam String fName, @RequestParam String lastName, @RequestParam double avg)  {
-        sRep.addStudent(fName,lastName,avg);
-    }
-*/
-
     @PostMapping("/addStudent")
-    public void addStudent(@RequestBody Student student){
+    public void addStudent(@RequestBody Student student) {
         sRep.addStudent(student);
     }
 
     @PostMapping("addTeacher")
-    public void addTeacher(@RequestBody Teacher teacher){
+    public void addTeacher(@RequestBody Teacher teacher) {
         tRep.addTeacher(teacher);
     }
 
@@ -54,7 +43,7 @@ public class UniversityWebService {
     }
 
     @PutMapping("/updateTeacher")
-    public void  uppdateTeacher(@RequestParam String firstName, @RequestBody Teacher teacher){
+    public void uppdateTeacher(@RequestParam String firstName, @RequestBody Teacher teacher) {
         tRep.delTeacher(firstName);
         tRep.addTeacher(teacher);
     }
@@ -63,26 +52,11 @@ public class UniversityWebService {
     public void delStudent(@PathVariable("firstName") String firstName) {
         sRep.delStudent(firstName);
     }
+
     @DeleteMapping("/delTeacher")
-    public void delTeacher(@RequestParam String firstName){
+    public void delTeacher(@RequestParam String firstName) {
         tRep.delTeacher(firstName);
     }
-
-//    @PutMapping("/addTeacher/{name}")
-//    public void addTeacher(@PathVariable("name") String name) {
-//        tRep.addTeacher(name);
-//
-//    }
-//    @PutMapping("/addTeacher/{name}")
-//    public void addTeacher(@RequestParam(name="name") String name){
-//        tRep.addTeacher(name);
-//
-//    }
-
-//    @DeleteMapping("delTeacher/{name}")
-//    public void delTeacher(@PathVariable("name") String name) {
-//        tRep.delTeacher(name);
-//    }
 
 
 }
